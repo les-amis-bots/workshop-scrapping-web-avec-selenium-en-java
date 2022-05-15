@@ -2,9 +2,13 @@
 
 ## Introduction
 
-Java was designed to be easy to use and is therefore easy to write, compile, debug, and learn than other programming languages. Java is object-oriented. This allows you to create modular programs and reusable code. Java is platform-independent.
+Java was designed to be easy to use and is therefore easy to write,
+compile, debug, and learn than other programming languages. Java is
+object-oriented. This allows you to create modular programs and reusable
+code. Java is platform-independent.
 
-**Java technology is used by more than 6 million developers and runs on more than 5.5 billion devices.**
+**Java technology is used by more than 6 million developers and runs on
+more than 5.5 billion devices.**
 
 ## Installation
 
@@ -35,19 +39,52 @@ mvn compile assembly:single
 java -jar target/your-amazing-jar-file.jar
 ```
 
-If it's not work, try to run with the new version or java or directly with your IDE like Jetbrain IntelliJ.
+If it's not work, try to run with the new version or java or directly with
+your IDE like Jetbrain IntelliJ.
 https://www.jetbrains.com/fr-fr/idea/
 
 PS: Fuck VS Code for Java !
 
 ## Selenium ?
 
-Selenium is a Java library and tool used for automating web browsers to do a number of tasks. One of such is web-scraping to extract useful data and information that may be otherwise unavailable via API.
+Selenium is a Java library and tool used for automating web browsers to do
+a number of tasks. One of such is web-scraping to extract useful data and
+information that may be otherwise unavailable via API.
 
 Add this dependencie to you pom.xml.
 https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
 
-Then install Chromedriver : https://chromedriver.chromium.org/getting-started
+Then install Chromedriver run the
+
+```bash
+./install_chromedriver.sh
+```
+
+You need to check that your version of chrome match the version 101 and
+Chrome Stable is installed on your computer.
+
+## First step to try if it's work
+
+You can run this simple code:
+
+```java
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver",
+"/usr/bin/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        WebDriverWait wait = new WebDriverWait(driver,
+Duration.ofSeconds(10));
+        try {
+            driver.get(https://intra.epitech.eu/");
+            Thread.sleep(10000);
+            System.out.println("OK !");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
+    }
+```
 
 ## Exercise 1 (Easy bro)
 
@@ -65,7 +102,8 @@ https://coinmarketcap.com/fr/currencies/ethereum/
 
 ## Exercise 3 (Hardcore)
 
-I'm so sad because sometime i found a captcha, try to breack it with selenium:
+I'm so sad because sometime i found a captcha, try to breack it with
+selenium:
 
 https://patrickhlauke.github.io/recaptcha/
 
